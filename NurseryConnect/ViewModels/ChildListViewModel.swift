@@ -7,9 +7,9 @@
 //  Date: 2026-04-12
 //
 
+import Combine
 import Foundation
 import SwiftData
-import SwiftUI
 
 // MARK: - ChildListViewModel
 

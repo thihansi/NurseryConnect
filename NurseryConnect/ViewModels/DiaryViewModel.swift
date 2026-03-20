@@ -7,9 +7,9 @@
 //  Date: 2026-04-12
 //
 
+import Combine
 import Foundation
 import SwiftData
-import SwiftUI
 
 // MARK: - DiaryViewModel
 
@@ -96,6 +96,15 @@ final class DiaryViewModel: ObservableObject {
         switch draft.entryType {
         case .nappy:
             detailsText = combinedNappyDetails
+        case .sleep:
+            if let start = draft.sleepStart, let end = draft.sleepEnd, end > start {
+                let minutes = Int(end.timeIntervalSince(start) / 60)
+                let hours = minutes / 60
+                let remainder = minutes % 60
+                detailsText = "Slept \(hours)h \(remainder)m"
+            } else {
+                detailsText = combinedNappyDetails
+            }
         default:
             detailsText = draft.details.trimmingCharacters(in: .whitespacesAndNewlines)
         }
