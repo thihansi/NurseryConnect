@@ -2,33 +2,13 @@
 //  Color+Extensions.swift
 //  NurseryConnect
 //
-//  Purpose: Semantic colours mapped from asset catalog entries.
+//  Purpose: Incident category styling; brand colours come from the asset catalog
+//  (Swift-generated `Color` symbols — do not redeclare them here).
 //  Author: Thihansi Gunawardena
 //  Date: 2026-04-12
 //
 
 import SwiftUI
-
-// MARK: - BrandColors
-
-extension Color {
-    /// Primary brand teal from assets.
-    static let primaryTeal = Color("PrimaryTeal")
-    /// Soft screen background from assets.
-    static let softBackground = Color("SoftBackground")
-    /// Card surface colour from assets.
-    static let cardBackground = Color("CardBackground")
-    /// Strong alert red for allergies and serious states.
-    static let alertRed = Color("AlertRed")
-    /// Amber for moderate warnings.
-    static let warningAmber = Color("WarningAmber")
-    /// Positive confirmation green.
-    static let successGreen = Color("SuccessGreen")
-    /// Primary readable text colour.
-    static let textPrimary = Color("TextPrimary")
-    /// Secondary descriptive text colour.
-    static let textSecondary = Color("TextSecondary")
-}
 
 // MARK: - IncidentCategorySeverity
 
