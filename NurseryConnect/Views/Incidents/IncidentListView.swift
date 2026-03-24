@@ -40,6 +40,7 @@ struct IncidentListView: View {
                         .foregroundStyle(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: LayoutConstants.cardCornerRadius, style: .continuous))
                 }
+                .accessibilityIdentifier("ReportNewIncidentButton")
                 .listRowInsets(EdgeInsets(
                     top: 8,
                     leading: LayoutConstants.horizontalPadding,

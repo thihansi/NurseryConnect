@@ -68,6 +68,7 @@ struct NewIncidentReportView: View {
                         Text(child.preferredName).tag(Optional(child.id))
                     }
                 }
+                .accessibilityIdentifier("IncidentChildPicker")
                 Picker("Category", selection: bindingCategory) {
                     Text("Select category").tag(Optional<IncidentCategory>.none)
                     ForEach(IncidentCategory.allCases, id: \.self) { category in
@@ -81,6 +82,7 @@ struct NewIncidentReportView: View {
                 }
                 TextField("Location (e.g. Garden area)", text: $incidentViewModel.incidentLocation)
                     .textFieldStyle(.roundedBorder)
+                    .accessibilityIdentifier("IncidentLocationField")
                 HStack {
                     Text("Reported at \(incidentViewModel.reportAnchorTime.ncFormattedDateTime()) — cannot be changed")
                         .font(.caption)
@@ -102,6 +104,7 @@ struct NewIncidentReportView: View {
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color.textSecondary.opacity(0.2))
                     )
+                    .accessibilityIdentifier("IncidentDescriptionField")
                 Text("Immediate action taken")
                     .font(.headline.weight(.semibold))
                 TextEditor(text: $incidentViewModel.immediateActionTaken)
@@ -110,6 +113,7 @@ struct NewIncidentReportView: View {
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color.textSecondary.opacity(0.2))
                     )
+                    .accessibilityIdentifier("IncidentImmediateField")
                 witnessEditor
             }
         }
