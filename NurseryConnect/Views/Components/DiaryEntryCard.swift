@@ -50,14 +50,15 @@ struct DiaryEntryCard: View {
 }
 
 #Preview {
-    let entry = DiaryEntry(
-        id: UUID(),
-        childId: UUID(),
-        timestamp: Date(),
-        entryTypeRaw: DiaryEntryType.meal.rawValue,
-        details: "Lunch eaten well with water."
+    DiaryEntryCard(
+        entry: DiaryEntry(
+            id: UUID(),
+            childId: UUID(),
+            timestamp: Date(),
+            entryTypeRaw: DiaryEntryType.meal.rawValue,
+            details: "Lunch eaten well with water."
+        )
     )
-    return DiaryEntryCard(entry: entry)
-        .padding()
-        .background(Color.softBackground)
+    .padding()
+    .background(Color.softBackground)
 }

@@ -48,7 +48,11 @@ struct DiaryEntryDraft {
     ///   - entryType: Initial type selection.
     /// - Returns: Draft with safe defaults.
     static func empty(childId: UUID, entryType: DiaryEntryType) -> DiaryEntryDraft {
-        DiaryEntryDraft(
+        let now = Date()
+        let calendar = Calendar.current
+        let sleepStartDefault = calendar.date(byAdding: .hour, value: -1, to: now) ?? now
+        let sleepEndDefault = now
+        return DiaryEntryDraft(
             childId: childId,
             entryType: entryType,
             details: "",
@@ -58,8 +62,8 @@ struct DiaryEntryDraft {
             mealConsumption: .most,
             fluidIntakeMl: 0,
             drinkType: .water,
-            sleepStart: Date(),
-            sleepEnd: Date(),
+            sleepStart: entryType == .sleep ? sleepStartDefault : now,
+            sleepEnd: entryType == .sleep ? sleepEndDefault : now,
             nappyType: .wet,
             nappyNotes: "",
             milestoneNextSteps: ""

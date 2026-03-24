@@ -46,20 +46,21 @@ struct IncidentCard: View {
 }
 
 #Preview {
-    let report = IncidentReport(
-        id: UUID(),
-        childId: UUID(),
-        childName: "Oliver James Patel",
-        keyworkerName: AppConstants.currentKeyworkerName,
-        reportedAt: Date(),
-        incidentCategoryRaw: IncidentCategory.accidentMinor.rawValue,
-        incidentLocation: "Garden",
-        incidentDescription: "Minor trip.",
-        immediateActionTaken: "Plaster applied.",
-        witnesses: [],
-        statusRaw: IncidentStatus.submittedForReview.rawValue
+    IncidentCard(
+        report: IncidentReport(
+            id: UUID(),
+            childId: UUID(),
+            childName: "Oliver James Patel",
+            keyworkerName: AppConstants.currentKeyworkerName,
+            reportedAt: Date(),
+            incidentCategoryRaw: IncidentCategory.accidentMinor.rawValue,
+            incidentLocation: "Garden",
+            incidentDescription: "Minor trip.",
+            immediateActionTaken: "Plaster applied.",
+            witnesses: [],
+            statusRaw: IncidentStatus.submittedForReview.rawValue
+        )
     )
-    return IncidentCard(report: report)
-        .padding()
-        .background(Color.softBackground)
+    .padding()
+    .background(Color.softBackground)
 }
