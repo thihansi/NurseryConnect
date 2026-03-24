@@ -100,29 +100,7 @@ struct AddDiaryEntryView: View {
     }
 }
 
-#Preview {
-    let child = Child(
-        id: UUID(),
-        fullName: "Amelia Rose Thompson",
-        preferredName: "Amelia",
-        dateOfBirth: Date(),
-        roomName: "Sunshine Room",
-        profileColorHex: "#5C6BC0",
-        allergies: ["Peanuts"],
-        dietaryNotes: "Nut free",
-        hasPhotographyConsent: true
-    )
-    do {
-        let container = try ModelContainer(
-            for: Child.self,
-            DiaryEntry.self,
-            IncidentReport.self,
-            BodyMapMarker.self,
-            configurations: ModelConfiguration(isStoredInMemoryOnly: true)
-        )
-        let context = ModelContext(container)
-        return AddDiaryEntryView(modelContext: context, child: child, initialType: .activity)
-    } catch {
-        return Text("Preview unavailable")
-    }
+#Preview("AddDiaryEntryView") {
+    Text("Run on device or open from Child Diary in simulator for a live preview with SwiftData.")
+        .padding()
 }
