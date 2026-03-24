@@ -62,7 +62,7 @@ struct IncidentListView: View {
                 Section {
                     ForEach(rows, id: \.id) { report in
                         NavigationLink {
-                            IncidentDetailView(report: report)
+                            IncidentDetailView(reportId: report.id)
                         } label: {
                             IncidentCard(report: report)
                         }
