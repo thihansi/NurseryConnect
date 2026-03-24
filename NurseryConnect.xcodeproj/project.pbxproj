@@ -8,6 +8,8 @@
 
 /* Begin PBXFileReference section */
 		8E0105832F8BB0530070388D /* NurseryConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NurseryConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2C0105972F8BB0530070388D /* NurseryConnectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NurseryConnectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2C0105982F8BB0530070388D /* NurseryConnectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NurseryConnectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +18,34 @@
 			path = NurseryConnect;
 			sourceTree = "<group>";
 		};
+		B2C0105952F8BB0530070388D /* NurseryConnectTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NurseryConnectTests;
+			sourceTree = "<group>";
+		};
+		B2C0105962F8BB0530070388D /* NurseryConnectUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NurseryConnectUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8E0105802F8BB0530070388D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2C01059E2F8BB0530070388D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2C0105A32F8BB0530070388D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				8E0105852F8BB0530070388D /* NurseryConnect */,
+				B2C0105952F8BB0530070388D /* NurseryConnectTests */,
+				B2C0105962F8BB0530070388D /* NurseryConnectUITests */,
 				8E0105842F8BB0530070388D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				8E0105832F8BB0530070388D /* NurseryConnect.app */,
+				B2C0105972F8BB0530070388D /* NurseryConnectTests.xctest */,
+				B2C0105982F8BB0530070388D /* NurseryConnectUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";

@@ -75,6 +75,7 @@ struct NewIncidentReportView: View {
                         Text(category.displayTitle).tag(Optional(category))
                     }
                 }
+                .accessibilityIdentifier("IncidentCategoryPicker")
                 if let category = incidentViewModel.selectedCategory {
                     Text(category.displayDescription)
                         .font(.caption)
