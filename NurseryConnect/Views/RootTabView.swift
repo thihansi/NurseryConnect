@@ -83,5 +83,5 @@ struct RootTabView: View {
 
 #Preview {
     RootTabView()
-        .modelContainer(for: [Child.self, DiaryEntry.self, IncidentReport.self, BodyMapMarker.self], inMemory: true)
+        .modelContainer(for: Child.self, DiaryEntry.self, IncidentReport.self, BodyMapMarker.self, inMemory: true)
 }
