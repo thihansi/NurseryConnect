@@ -350,5 +350,5 @@ struct NewIncidentReportView: View {
     }
     .environmentObject(IncidentViewModel())
     .environmentObject(ChildListViewModel())
-    .modelContainer(for: [Child.self, DiaryEntry.self, IncidentReport.self, BodyMapMarker.self], inMemory: true)
+    .modelContainer(for: Child.self, DiaryEntry.self, IncidentReport.self, BodyMapMarker.self, inMemory: true)
 }
