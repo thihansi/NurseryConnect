@@ -7,7 +7,6 @@
 //  Date: 2026-04-12
 //
 
-import SwiftData
 import SwiftUI
 
 // MARK: - ChildDiaryView

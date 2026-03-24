@@ -112,7 +112,17 @@ struct AddDiaryEntryView: View {
         dietaryNotes: "Nut free",
         hasPhotographyConsent: true
     )
-    let container = try? ModelContainer(for: Child.self, DiaryEntry.self, IncidentReport.self, BodyMapMarker.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
-    let context = ModelContext(container!)
-    return AddDiaryEntryView(modelContext: context, child: child, initialType: .activity)
+    do {
+        let container = try ModelContainer(
+            for: Child.self,
+            DiaryEntry.self,
+            IncidentReport.self,
+            BodyMapMarker.self,
+            configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+        )
+        let context = ModelContext(container)
+        return AddDiaryEntryView(modelContext: context, child: child, initialType: .activity)
+    } catch {
+        return Text("Preview unavailable")
+    }
 }
