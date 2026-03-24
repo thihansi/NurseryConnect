@@ -42,14 +42,23 @@ struct MyChildrenListView: View {
                 }
 
                 Section {
-                    ForEach(childListViewModel.children, id: \.id) { child in
-                        NavigationLink {
-                            ChildDiaryView(child: child)
-                        } label: {
-                            ChildSummaryRow(child: child, todayCount: childListViewModel.todayEntryCount(for: child.id))
-                        }
+                    if childListViewModel.children.isEmpty {
+                        EmptyStateView(
+                            icon: "person.2.slash",
+                            title: "No assigned children",
+                            message: "When children are assigned to you they will appear here."
+                        )
                         .listRowBackground(Color.clear)
-                        .listRowSeparator(.hidden)
+                    } else {
+                        ForEach(childListViewModel.children, id: \.id) { child in
+                            NavigationLink {
+                                ChildDiaryView(child: child)
+                            } label: {
+                                ChildSummaryRow(child: child, todayCount: childListViewModel.todayEntryCount(for: child.id))
+                            }
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
+                        }
                     }
                 }
 
@@ -66,6 +75,7 @@ struct MyChildrenListView: View {
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
             .background(Color.softBackground)
+            .accessibilityIdentifier("MyChildrenList")
 
             Button {
                 isPresentingQuickLog = true
@@ -82,6 +92,7 @@ struct MyChildrenListView: View {
             .padding(.trailing, LayoutConstants.horizontalPadding)
             .padding(.bottom, 24)
             .accessibilityLabel(Text("Quick log diary entry"))
+            .accessibilityIdentifier("QuickLogButton")
         }
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {

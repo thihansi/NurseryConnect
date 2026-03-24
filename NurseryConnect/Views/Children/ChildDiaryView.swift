@@ -135,6 +135,7 @@ struct ChildDiaryView: View {
                 }
                 .padding(.horizontal, LayoutConstants.horizontalPadding)
                 .padding(.bottom, 24)
+                .accessibilityIdentifier("DiaryAddEntryButton")
             }
         }
     }

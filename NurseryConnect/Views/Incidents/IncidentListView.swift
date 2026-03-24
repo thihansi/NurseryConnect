@@ -81,6 +81,7 @@ struct IncidentListView: View {
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
         .background(Color.softBackground)
+        .accessibilityIdentifier("IncidentReportsList")
         .navigationTitle("Incident Reports")
         .navigationBarTitleDisplayMode(.large)
         .onAppear {

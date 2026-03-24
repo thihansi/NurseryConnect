@@ -81,6 +81,7 @@ struct AddDiaryEntryView: View {
                         attemptSave()
                     }
                     .fontWeight(.semibold)
+                    .accessibilityIdentifier("DiarySaveEntryButton")
                 }
             }
         }

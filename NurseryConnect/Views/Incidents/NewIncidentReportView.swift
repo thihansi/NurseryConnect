@@ -180,6 +180,7 @@ struct NewIncidentReportView: View {
                         .foregroundStyle(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: LayoutConstants.cardCornerRadius, style: .continuous))
                 }
+                .accessibilityIdentifier("IncidentSubmitReview")
                 Button {
                     let saved = incidentViewModel.createReport()
                     if saved {
@@ -230,6 +231,7 @@ struct NewIncidentReportView: View {
                     advanceStep()
                 }
                 .disabled(!canAdvanceFromCurrentStep())
+                .accessibilityIdentifier("IncidentWizardNext")
             }
         }
         .padding(.bottom, 12)

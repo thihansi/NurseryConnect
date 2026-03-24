@@ -50,6 +50,7 @@ struct AddDiaryEntryDynamicForm: View {
                     .textFieldStyle(.roundedBorder)
                     .lineLimit(3, reservesSpace: true)
                     .foregroundStyle(Color.textPrimary)
+                    .accessibilityIdentifier("DiaryActivityDescription")
             }
             if shouldShowError(key: "details") {
                 validationText(for: "details")
