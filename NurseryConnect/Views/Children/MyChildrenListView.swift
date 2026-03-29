@@ -177,5 +177,5 @@ private struct ChildSummaryRow: View {
     }
     .environmentObject(ChildListViewModel())
     .environmentObject(IncidentViewModel())
-    .modelContainer(for: Child.self, DiaryEntry.self, IncidentReport.self, BodyMapMarker.self, inMemory: true)
+    .modelContainer(for: [Child.self, DiaryEntry.self, IncidentReport.self, BodyMapMarker.self], inMemory: true)
 }

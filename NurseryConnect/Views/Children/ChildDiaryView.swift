@@ -206,5 +206,5 @@ struct ChildDiaryView: View {
             )
         )
     }
-    .modelContainer(for: Child.self, DiaryEntry.self, IncidentReport.self, BodyMapMarker.self, inMemory: true)
+    .modelContainer(for: [Child.self, DiaryEntry.self, IncidentReport.self, BodyMapMarker.self], inMemory: true)
 }
